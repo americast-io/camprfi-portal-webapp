@@ -5,9 +5,11 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import { authReducer } from './reducers/userReducers'
+import { companiesReducer } from './reducers/companyReducers';
 
 const reducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    companies: companiesReducer
 
 })
 

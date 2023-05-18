@@ -9,11 +9,15 @@ import { OneDevice } from './views/OneDevice';
 import { NewDevice } from './views/NewDevice';
 import { EditDevice } from './views/EditDevice';
 import { NotFound } from './views/NotFound';
+import  AllCompanies from './views/Company/AllCompanies';
 import {Login} from './components/user/Login';
 import { Register } from './components/user/Register';
 import { loadUserAction } from './actions/userActions';
 import store from './store';
 import  Header  from './components/layout/Header';
+import Dashboard from './views/Dashboard';
+
+
 
 
 
@@ -39,6 +43,8 @@ function App() {
         <Route path="/*" element={<NotFound />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/companies" element={<AllCompanies />} />
+        <Route path="/dashboard" element={<Dashboard/>} />
 
 
       </Routes>

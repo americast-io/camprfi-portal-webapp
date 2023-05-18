@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'https://api.camprfi.com/api/v1',
-    // baseURL: 'http://localhost:8000/api/v1'
+    // baseURL: 'https://api.camprfi.com/api/v1',
+    baseURL: 'http://localhost:8000/api/v1'
     // baseURL: 'https://127.0.0.1:8000/api/v1'
 });
 
@@ -52,3 +52,26 @@ export const logoutUser = async () => {
     const res = await http.get('/auth/logout', {withCredentials: true} );
     return res.data;
 }
+
+// company API
+
+export const getAllCompanies = async () => {
+    const res = await http.get('/companies');
+    return res.data;
+};
+
+export const getCompanyById = async (id) => {
+    const res = await http.get(`/companies/${id}`);
+    return res.data;
+};
+
+export const createCompany = async (data) => {
+    const res = await http.post('/companies/admin', data, {withCredentials: true});
+    return res.data;
+};
+
+export const updateCompanyById = async (id, data) => {
+    const res = await http.put(`/companies/${id}`, data);
+    return res.data;
+
+};
