@@ -16,6 +16,7 @@ import { loadUserAction } from './actions/userActions';
 import store from './store';
 import  Header  from './components/layout/Header';
 import Dashboard from './views/Dashboard';
+import OneCompany from './views/Company/OneCompany';
 
 
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/companies" element={<AllCompanies />} />
         <Route path="/dashboard" element={<Dashboard/>} />
+        <Route path="/companies/:id" element={<OneCompany/>} />
 
 
       </Routes>
